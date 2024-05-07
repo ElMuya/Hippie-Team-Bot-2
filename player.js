@@ -54,26 +54,31 @@ function initializePlayer(client) {
 
         const queueLoopButton = new ButtonBuilder()
             .setCustomId("loopQueue")
-            .setLabel("Loop Queue")
+            .setLabel("Activar Bucle")
+            .setEmoji('🔄')
             .setStyle(ButtonStyle.Primary);
 
         const disableLoopButton = new ButtonBuilder()
             .setCustomId("disableLoop")
-            .setLabel("Disable Loop")
-            .setStyle(ButtonStyle.Primary);
+            .setLabel("Desactivar Bucle")
+            .setEmoji('🔄')
+            .setStyle(ButtonStyle.Danger);
 
         const skipButton = new ButtonBuilder()
             .setCustomId("skipTrack")
-            .setLabel("Skip")
+            .setLabel("Saltar")
+            .setEmoji('⏭️')
             .setStyle(ButtonStyle.Success);
 
         const showQueueButton = new ButtonBuilder()
             .setCustomId("showQueue")
-            .setLabel("Show Queue")
+            .setLabel("Ver Cola")
+            .setEmoji('📄')
             .setStyle(ButtonStyle.Primary);
         const clearQueueButton = new ButtonBuilder()
             .setCustomId("clearQueue")
             .setLabel("Clear Queue")
+            .setEmoji('📇')
             .setStyle(ButtonStyle.Danger);
 
     
@@ -132,7 +137,7 @@ function initializePlayer(client) {
             } else if (i.customId === 'disableLoop') {
                 setLoop(player, 'none');
                 const loopEmbed = new EmbedBuilder()
-                .setColor("#0099ff")
+                .setColor("#FF0000")
                 .setAuthor({
                     name: 'Bucle apagado',
                     iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1230836684774576168/7762-verified-blue.gif?ex=6638b97d&is=663767fd&hm=021725868cbbc66f35d2b980585489f93e9fd366aa57640732dc49e7da9a80ee&', 
@@ -171,10 +176,10 @@ for (let i = 0; i < pages.length; i++) {
             } else if (i.customId === 'clearQueue') {
                 clearQueue(player);
                 const queueEmbed = new EmbedBuilder()
-                .setColor("#0099ff")
+                .setColor("#FF0000")
                 .setAuthor({
                     name: 'Cola borrada',
-                    iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1230836684774576168/7762-verified-blue.gif?ex=6638b97d&is=663767fd&hm=021725868cbbc66f35d2b980585489f93e9fd366aa57640732dc49e7da9a80ee&', 
+                    iconURL: 'https://media.discordapp.net/attachments/1236113159861964930/1237506879509495828/delete.png?ex=663be597&is=663a9417&hm=f5d59b7b963cb8da64bdd54d5dcf155792825a8a701874fa3111f7c65e43a148&=&quality=lossless', 
                     url: 'https://discord.gg/xQF9f9yUEM'
                 })
                 .setDescription('**¡Las canciones en cola se borraron correctamente!**');
