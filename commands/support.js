@@ -2,26 +2,22 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
   name: "support",
-  description: "Get support server link",
+  description: "Obtén información del servidor.",
   permissions: "0x0000000000000800",
   options: [],
   run: async (client, interaction) => {
     try {
 
-      const supportServerLink = "https://discord.gg/xQF9f9yUEM";
-      const githubLink = "https://github.com/GlaceYT";
-      const replitLink = "https://replit.com/@GlaceYT";
-      const youtubeLink = "https://www.youtube.com/@GlaceYT";
-        const embed = new EmbedBuilder()
-            .setColor('#b300ff')
-            .setAuthor({
-              name: 'Support Server',
-              iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1230824519220985896/6280-2.gif?ex=6638ae28&is=66375ca8&hm=13e4a1b91a95b2934a39de1876e66c11711c7b30ac1a91c2a158f2f2ed1c2fc6&', 
-              url: 'https://discord.gg/xQF9f9yUEM'
-          })
-            .setDescription(`➡️ **Join our Discord server for support and updates:**\n- Discord - ${supportServerLink}\n\n➡️ **Follow us on:**\n- GitHub - ${githubLink}\n- Replit - ${replitLink}\n- YouTube - ${youtubeLink}`)
-            .setImage('https://cdn.discordapp.com/attachments/1113800537402527903/1236803979996958740/11.png?ex=663956f7&is=66380577&hm=3b3c19a11adcb979517a133f2907f671305d23f1f5092cf7df043e6d5cab07bc&')
-            .setTimestamp();
+      const instagramLink = "https://www.instagram.com/hippie.team";
+      const youtubehtLink = "https://www.youtube.com/@hippieteamoficial";
+      const youtubehscLink = "https://www.youtube.com/@hippiesimcup";
+      const webLink = "http://hippieteam.free.nf";
+      const embed = new EmbedBuilder()
+        .setColor('#00b19e')
+        .setTitle('INFORMACIÓN:')
+        .setDescription(`➡️ **Síguenos en:**\n- Web - ${webLink}\n- Instagram - ${instagramLink}\n- Youtube HT - ${youtubehtLink}\n- Youtube HSC - ${youtubehscLink}`)
+        .setImage('https://media.discordapp.net/attachments/1236113159861964930/1236409791631327232/Banner_Discord_Invit.png?ex=6637e7d9&is=66369659&hm=194bdd64fd6cd7e8f627f8782b22c6fc1bed8f4f8668b815c6ee36f501a1da07&=&quality=lossless')
+        .setTimestamp();
 
       return interaction.reply({ embeds: [embed] });
     } catch (e) {
