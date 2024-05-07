@@ -48,27 +48,27 @@ function initializePlayer(client) {
         .setImage(`https://cdn.discordapp.com/attachments/1004341381784944703/1165201249331855380/RainbowLine.gif?ex=663939fa&is=6637e87a&hm=e02431de164b901e07b55d8f8898ca5b1b2832ad11985cecc3aa229a7598d610&`)
         .setThumbnail(track.info.thumbnail)
         .setTimestamp()
-        .setFooter({ text: 'Click below buttons to control playback!'}); 
+        .setFooter({ text: '¡Haga clic en los botones para controlar la reproducción!'}); 
 
 
 
         const queueLoopButton = new ButtonBuilder()
             .setCustomId("loopQueue")
-            .setLabel("Activar Bucle")
+            .setLabel("Bucle On")
             .setEmoji('🔄')
             .setStyle(ButtonStyle.Primary);
 
         const disableLoopButton = new ButtonBuilder()
             .setCustomId("disableLoop")
-            .setLabel("Desactivar Bucle")
-            .setEmoji('🔄')
+            .setLabel("Bucle Off")
+            .setEmoji('❌')
             .setStyle(ButtonStyle.Danger);
 
         const skipButton = new ButtonBuilder()
             .setCustomId("skipTrack")
             .setLabel("Saltar")
             .setEmoji('⏭️')
-            .setStyle(ButtonStyle.Success);
+            .setStyle(ButtonStyle.Primary);
 
         const showQueueButton = new ButtonBuilder()
             .setCustomId("showQueue")
@@ -77,7 +77,7 @@ function initializePlayer(client) {
             .setStyle(ButtonStyle.Primary);
         const clearQueueButton = new ButtonBuilder()
             .setCustomId("clearQueue")
-            .setLabel("Clear Queue")
+            .setLabel("Borrar Cola")
             .setEmoji('📇')
             .setStyle(ButtonStyle.Danger);
 
@@ -129,8 +129,7 @@ function initializePlayer(client) {
                   iconURL: 'https://cdn.discordapp.com/attachments/1156866389819281418/1157269773118357604/giphy.gif?ex=6517fef6&is=6516ad76&hm=f106480f7d017a07f75d543cf545bbea01e9cf53ebd42020bd3b90a14004398e&',
                   url: 'https://discord.gg/FUEHs7RCqz'
                 })
-            .setTitle("**¡Se reproducirá la siguiente canción!**")
-            .setTimestamp();
+            .setTitle("**¡Se reproducirá la siguiente canción!**");
                
     
             await channel.send({ embeds: [skipEmbed] });
@@ -140,7 +139,7 @@ function initializePlayer(client) {
                 .setColor("#FF0000")
                 .setAuthor({
                     name: 'Bucle apagado',
-                    iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1230836684774576168/7762-verified-blue.gif?ex=6638b97d&is=663767fd&hm=021725868cbbc66f35d2b980585489f93e9fd366aa57640732dc49e7da9a80ee&', 
+                    iconURL: 'https://media.discordapp.net/attachments/1236113159861964930/1237532875482464277/off.png?ex=663bfdcd&is=663aac4d&hm=85e8845b2c4ba0bcbbb29df64c3f981c83a25acce63f378c6c62276a85a22276&=&quality=lossless', 
                     url: 'https://discord.gg/xQF9f9yUEM'
                 })
                 .setDescription('**¡El bucle está deshabilitado para la cola y la canción única!**');
@@ -163,7 +162,7 @@ for (let i = 0; i < queueNames.length; i += pageSize) {
 }
 
 for (let i = 0; i < pages.length; i++) {
-    const numberedSongs = pages[i].map((song, index) => `${index + 1}. ${song}`).join('\n');
+    const numberedSongs = pages[i].map((song, index) => `**${index + 1}.** ${song}`).join('\n');
 
     const queueEmbed = new EmbedBuilder()
         .setColor("#0099ff")
