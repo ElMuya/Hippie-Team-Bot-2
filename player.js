@@ -61,7 +61,7 @@ function initializePlayer(client) {
         const disableLoopButton = new ButtonBuilder()
             .setCustomId("disableLoop")
             .setLabel("Bucle Off")
-            .setEmoji('❌')
+            .setEmoji('🔄')
             .setStyle(ButtonStyle.Danger);
 
         const skipButton = new ButtonBuilder()
