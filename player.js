@@ -3,14 +3,6 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("
 const { queueNames } = require("./commands/play"); 
 
 function initializePlayer(client) {
-    const nodes = [
-        {
-            host: "lavalink.oryzen.xyz",
-            password: "oryzen.xyz",
-            port: 80,
-            secure: false
-        },
-    ];
 
     client.riffy = new Riffy(client, nodes, {
         send: (payload) => {
