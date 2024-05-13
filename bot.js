@@ -64,7 +64,7 @@ client.login(config.TOKEN || process.env.TOKEN).catch((e) => {
 
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 1433;
 app.get('/', (req, res) => {
     const imagePath = path.join(__dirname, 'index.html');
     res.sendFile(imagePath);
