@@ -10,6 +10,12 @@ function initializePlayer(client) {
             port: 6969,
             secure: false
         },
+        {
+            host: "lava-v4.ajieblogs.eu.org",
+            password: "https://dsc.gg/ajidevserver",
+            port: 80,
+            secure: false
+        },
     ];
 
     client.riffy = new Riffy(client, nodes, {
